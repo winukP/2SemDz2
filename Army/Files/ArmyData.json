@@ -1,0 +1,128 @@
+{
+  "Soldiers": [
+    {
+      "Id": "10001",
+      "FullName": "Иванов Иван Иванович",
+      "Rank": "Сержант",
+      "PersonalInfo": {
+        "BirthDate": "2000-05-15T00:00:00",
+        "Passport": "4512 345678",
+        "Address": "г. Москва, ул. Армейская, д.5"
+      },
+      "ServiceInfo": {
+        "EnlistmentDate": "2022-06-01T00:00:00",
+        "Unit": "3-я мотострелковая рота",
+        "Position": "Командир отделения",
+        "ContractType": "Срочная служба"
+      }
+    },
+    {
+      "Id": "10002",
+      "FullName": "Петров Петр Петрович",
+      "Rank": "Рядовой",
+      "PersonalInfo": {
+        "BirthDate": "2001-11-23T00:00:00",
+        "Passport": "4512 345679",
+        "Address": "г. Тверь, ул. Солдатская, д.12"
+      },
+      "ServiceInfo": {
+        "EnlistmentDate": "2023-04-15T00:00:00",
+        "Unit": "3-я мотострелковая рота",
+        "Position": "Стрелок",
+        "ContractType": "Срочная служба"
+      }
+    },
+    {
+      "Id": "10003",
+      "FullName": "Сидоров Алексей Владимирович",
+      "Rank": "Капитан",
+      "PersonalInfo": {
+        "BirthDate": "1990-03-10T00:00:00",
+        "Passport": "4512 345680",
+        "Address": "г. Москва, ул. Офицерская, д.8"
+      },
+      "ServiceInfo": {
+        "EnlistmentDate": "2013-08-20T00:00:00",
+        "Unit": "3-я мотострелковая рота",
+        "Position": "Командир роты",
+        "ContractType": "Контракт"
+      }
+    }
+  ],
+  "Technics": [
+    {
+      "Id": 101,
+      "Name": "Т-90М",
+      "TypeTechnics": "Танк",
+      "YearRelease": 2020,
+      "TechnicalSpecs": {
+        "Weight": "46 тонн",
+        "EnginePower": "1130 л.с.",
+        "MaxSpeed": "70 км/ч",
+        "FuelCapacity": "1200 л"
+      },
+      "CombatInfo": {
+        "Crew": "3 человека",
+        "Armament": "125-мм гладкоствольная пушка",
+        "Ammunition": "40 снарядов",
+        "Armor": "Комбинированная, динамическая защита"
+      }
+    },
+    {
+      "Id": 102,
+      "Name": "БМП-3",
+      "TypeTechnics": "Боевая машина пехоты",
+      "YearRelease": 2018,
+      "TechnicalSpecs": {
+        "Weight": "18.7 тонн",
+        "EnginePower": "500 л.с.",
+        "MaxSpeed": "70 км/ч",
+        "FuelCapacity": "700 л"
+      },
+      "CombatInfo": {
+        "Crew": "3 человека",
+        "Armament": "100-мм пушка, 30-мм автоматическая пушка",
+        "Ammunition": "40 выстрелов, 500 снарядов",
+        "Armor": "Противопульная"
+      }
+    }
+  ],
+  "Duties": [
+    {
+      "Id": 1001,
+      "TaskName": "Патрулирование",
+      "Priority": "Высокий",
+      "Duration": 24,
+      "AssignedSoldiers": {
+        "LeaderId": 1,
+        "LeaderName": "Иванов И.И.",
+        "MembersCount": 4,
+        "MembersList": "Иванов, Петров, Сидоров, Козлов"
+      },
+      "LocationInfo": {
+        "Zone": "Северная зона ответственности",
+        "Coordinates": "55.7512, 37.6184",
+        "Checkpoint": "КПП-3",
+        "Route": "Маршрут №7"
+      }
+    },
+    {
+      "Id": 1002,
+      "TaskName": "Дежурство по части",
+      "Priority": "Средний",
+      "Duration": 24,
+      "AssignedSoldiers": {
+        "LeaderId": 2,
+        "LeaderName": "Петров П.П.",
+        "MembersCount": 2,
+        "MembersList": "Петров, Смирнов"
+      },
+      "LocationInfo": {
+        "Zone": "Штаб части",
+        "Coordinates": "55.7550, 37.6200",
+        "Checkpoint": "КПП-1",
+        "Route": "Внутренний периметр"
+      }
+    }
+  ]
+}

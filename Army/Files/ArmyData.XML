@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArmyData>
+  
+  <!--Военнослужащие-->
+  <Soldiers>
+    <Soldier>
+      <Id>10001</Id>
+      <FullName>Иванов Иван Иванович</FullName>
+      <Rank>Сержант</Rank>
+      <PersonalInfo>
+        <BirthDate>2000-05-15T00:00:00</BirthDate>
+        <Passport>4512 345678</Passport>
+        <Address>г. Москва, ул. Армейская, д.5</Address>
+      </PersonalInfo>
+      <ServiceInfo>
+        <EnlistmentDate>2022-06-01T00:00:00</EnlistmentDate>
+        <Unit>3-я мотострелковая рота</Unit>
+        <Position>Командир отделения</Position>
+        <ContractType>Срочная служба</ContractType>
+      </ServiceInfo>
+    </Soldier>
+    <Soldier>
+      <Id>10002</Id>
+      <FullName>Петров Петр Петрович</FullName>
+      <Rank>Рядовой</Rank>
+      <PersonalInfo>
+        <BirthDate>2001-11-23T00:00:00</BirthDate>
+        <Passport>4512 345679</Passport>
+        <Address>г. Тверь, ул. Солдатская, д.12</Address>
+      </PersonalInfo>
+      <ServiceInfo>
+        <EnlistmentDate>2023-04-15T00:00:00</EnlistmentDate>
+        <Unit>3-я мотострелковая рота</Unit>
+        <Position>Стрелок</Position>
+        <ContractType>Срочная служба</ContractType>
+      </ServiceInfo>
+    </Soldier>
+    <Soldier>
+      <Id>10003</Id>
+      <FullName>Сидоров Алексей Владимирович</FullName>
+      <Rank>Капитан</Rank>
+      <PersonalInfo>
+        <BirthDate>1990-03-10T00:00:00</BirthDate>
+        <Passport>4512 345680</Passport>
+        <Address>г. Москва, ул. Офицерская, д.8</Address>
+      </PersonalInfo>
+      <ServiceInfo>
+        <EnlistmentDate>2013-08-20T00:00:00</EnlistmentDate>
+        <Unit>3-я мотострелковая рота</Unit>
+        <Position>Командир роты</Position>
+        <ContractType>Контракт</ContractType>
+      </ServiceInfo>
+    </Soldier>
+  </Soldiers>
+  <!--Военная техника-->
+  <Technics>
+    <MilitaryTechnics>
+      <Id>101</Id>
+      <Name>Т-90М</Name>
+      <TypeTechnics>Танк</TypeTechnics>
+      <YearRelease>2020</YearRelease>
+      <TechnicalSpecs>
+        <Weight>46 тонн</Weight>
+        <EnginePower>1130 л.с.</EnginePower>
+        <MaxSpeed>70 км/ч</MaxSpeed>
+        <FuelCapacity>1200 л</FuelCapacity>
+      </TechnicalSpecs>
+      <CombatInfo>
+        <Crew>3 человека</Crew>
+        <Armament>125-мм гладкоствольная пушка</Armament>
+        <Ammunition>40 снарядов</Ammunition>
+        <Armor>Комбинированная, динамическая защита</Armor>
+      </CombatInfo>
+    </MilitaryTechnics>
+    <MilitaryTechnics>
+      <Id>102</Id>
+      <Name>БМП-3</Name>
+      <TypeTechnics>Боевая машина пехоты</TypeTechnics>
+      <YearRelease>2018</YearRelease>
+      <TechnicalSpecs>
+        <Weight>18.7 тонн</Weight>
+        <EnginePower>500 л.с.</EnginePower>
+        <MaxSpeed>70 км/ч</MaxSpeed>
+        <FuelCapacity>700 л</FuelCapacity>
+      </TechnicalSpecs>
+      <CombatInfo>
+        <Crew>3 человека</Crew>
+        <Armament>100-мм пушка, 30-мм автоматическая пушка</Armament>
+        <Ammunition>40 выстрелов, 500 снарядов</Ammunition>
+        <Armor>Противопульная</Armor>
+      </CombatInfo>
+    </MilitaryTechnics>
+  </Technics>
+  <!--Наряды-->
+  <Duties>
+    <Duty>
+      <Id>1001</Id>
+      <TaskName>Патрулирование</TaskName>
+      <Priority>Высокий</Priority>
+      <Duration>24</Duration>
+      <AssignedSoldiers>
+        <LeaderId>1</LeaderId>
+        <LeaderName>Иванов И.И.</LeaderName>
+        <MembersCount>4</MembersCount>
+        <MembersList>Иванов, Петров, Сидоров, Козлов</MembersList>
+      </AssignedSoldiers>
+      <LocationInfo>
+        <Zone>Северная зона ответственности</Zone>
+        <Coordinates>55.7512, 37.6184</Coordinates>
+        <Checkpoint>КПП-3</Checkpoint>
+        <Route>Маршрут №7</Route>
+      </LocationInfo>
+    </Duty>
+    <Duty>
+      <Id>1002</Id>
+      <TaskName>Дежурство по части</TaskName>
+      <Priority>Средний</Priority>
+      <Duration>24</Duration>
+      <AssignedSoldiers>
+        <LeaderId>2</LeaderId>
+        <LeaderName>Петров П.П.</LeaderName>
+        <MembersCount>2</MembersCount>
+        <MembersList>Петров, Смирнов</MembersList>
+      </AssignedSoldiers>
+      <LocationInfo>
+        <Zone>Штаб части</Zone>
+        <Coordinates>55.7550, 37.6200</Coordinates>
+        <Checkpoint>КПП-1</Checkpoint>
+        <Route>Внутренний периметр</Route>
+      </LocationInfo>
+    </Duty>
+  </Duties>
+</ArmyData>
