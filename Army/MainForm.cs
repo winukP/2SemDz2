@@ -173,23 +173,23 @@ namespace Army
             Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
-        private void ShowTechnicsDetails(MilitaryTechnics eq)
+        private void ShowTechnicsDetails(MilitaryTechnics t)
         {
             var dt = new System.Data.DataTable();
             dt.Columns.Add("Свойство");
             dt.Columns.Add("Значение");
-            dt.Rows.Add("Номер", eq.Id);
-            dt.Rows.Add("Наименование", eq.Name);
-            dt.Rows.Add("Тип", eq.TypeTechnics);
-            dt.Rows.Add("Год выпуска", eq.YearRelease);
-            dt.Rows.Add("Вес", eq.TechnicalSpecs?.Weight);
-            dt.Rows.Add("Мощность двигателя", eq.TechnicalSpecs?.EnginePower);
-            dt.Rows.Add("Макс. скорость", eq.TechnicalSpecs?.MaxSpeed);
-            dt.Rows.Add("Запас топлива", eq.TechnicalSpecs?.FuelCapacity);
-            dt.Rows.Add("Экипаж", eq.CombatInfo?.Crew);
-            dt.Rows.Add("Вооружение", eq.CombatInfo?.Armament);
-            dt.Rows.Add("Боекомплект", eq.CombatInfo?.Ammunition);
-            dt.Rows.Add("Броня", eq.CombatInfo?.Armor);
+            dt.Rows.Add("Номер", t.Id);
+            dt.Rows.Add("Наименование", t.Name);
+            dt.Rows.Add("Тип", t.TypeTechnics);
+            dt.Rows.Add("Год выпуска", t.YearRelease);
+            dt.Rows.Add("Вес", t.TechnicalSpecs?.Weight);
+            dt.Rows.Add("Мощность двигателя", t.TechnicalSpecs?.EnginePower);
+            dt.Rows.Add("Макс. скорость", t.TechnicalSpecs?.MaxSpeed);
+            dt.Rows.Add("Запас топлива", t.TechnicalSpecs?.FuelCapacity);
+            dt.Rows.Add("Экипаж", t.CombatInfo?.Crew);
+            dt.Rows.Add("Вооружение", t.CombatInfo?.Armament);
+            dt.Rows.Add("Боекомплект", t.CombatInfo?.Ammunition);
+            dt.Rows.Add("Броня", t.CombatInfo?.Armor);
             Table.DataSource = dt;
             Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
