@@ -96,9 +96,7 @@ namespace Army
                             string json = File.ReadAllText(ofd.FileName);
                             currentData = JsonConvert.DeserializeObject<ArmyData>(json);
                         }
-
                         UpdateTreeWithData();
-
                         MessageBox.Show($"Данные загружены!" +
                             $"\nСолдаты: {currentData.Soldiers.Count}\n" +
                             $"Техника: {currentData.Technics.Count}\n" +
@@ -112,7 +110,6 @@ namespace Army
                 }
             }
         }
-
         private void Close1_Click(object sender, EventArgs e)
         {
             Close();
@@ -127,26 +124,30 @@ namespace Army
             }
             var allItems = new System.Data.DataTable();
             allItems.Columns.Add("Тип");
-            allItems.Columns.Add("ID");
+            allItems.Columns.Add("Номер");
             allItems.Columns.Add("Название");
             allItems.Columns.Add("Основное");
             allItems.Columns.Add("Дополнительно");
             foreach (var s in currentData.Soldiers)
             {
                 string main = $"Звание: {s.Rank} Должность: {s.ServiceInfo?.Position} Подразделение: {s.ServiceInfo?.Unit}";
-                string additional = $"Дата рождения: {s.PersonalInfo?.BirthDate.ToString("dd.MM.yyyy")} Паспорт: {s.PersonalInfo?.Passport} Адрес: {s.PersonalInfo?.Address} Дата призыва: {s.ServiceInfo?.EnlistmentDate.ToString("dd.MM.yyyy")} Тип службы: {s.ServiceInfo?.ContractType}";
+                string additional = $"Дата рождения: {s.PersonalInfo?.BirthDate.ToString("dd.MM.yyyy")} Паспорт: {s.PersonalInfo?.Passport} " +
+                    $"Адрес: {s.PersonalInfo?.Address} Дата призыва: {s.ServiceInfo?.EnlistmentDate.ToString("dd.MM.yyyy")} Тип службы: {s.ServiceInfo?.ContractType}";
                 allItems.Rows.Add("Солдат", s.Id, s.FullName, main, additional);
             }
-            foreach (var eq in currentData.Technics)
+            foreach (var t in currentData.Technics)
             {
-                string main = $"Тип: {eq.TypeTechnics}\n Год выпуска: {eq.YearRelease}\n Вес: {eq.TechnicalSpecs?.Weight}";
-                string additional = $"Мощность: {eq.TechnicalSpecs?.EnginePower} \nСкорость: {eq.TechnicalSpecs?.MaxSpeed} \nТопливо: {eq.TechnicalSpecs?.FuelCapacity} \nЭкипаж: {eq.CombatInfo?.Crew} \nВооружение: {eq.CombatInfo?.Armament} \nБоекомплект: {eq.CombatInfo?.Ammunition} \nБроня: {eq.CombatInfo?.Armor}";
-                allItems.Rows.Add("Техника", eq.Id, eq.Name, main, additional);
+                string main = $"Тип: {t.TypeTechnics}\n Год выпуска: {t.YearRelease}\n Вес: {t.TechnicalSpecs?.Weight}";
+                string additional = $"Мощность: {t.TechnicalSpecs?.EnginePower} \nСкорость: {t.TechnicalSpecs?.MaxSpeed} \nТопливо: " +
+                    $"{t.TechnicalSpecs?.FuelCapacity} \nЭкипаж: {t.CombatInfo?.Crew} \nВооружение: {t.CombatInfo?.Armament} " +
+                    $"\nБоекомплект: {t.CombatInfo?.Ammunition} \nБроня: {t.CombatInfo?.Armor}";
+                allItems.Rows.Add("Техника", t.Id, t.Name, main, additional);
             }
             foreach (var d in currentData.Duties)
             {
                 string main = $"Приоритет: {d.Priority} \n Длительность: {d.Duration} ч.\n Командир: {d.AssignedSoldiers?.LeaderName}";
-                string additional = $"ID командира: {d.AssignedSoldiers?.LeaderId} \nКол-во бойцов: {d.AssignedSoldiers?.MembersCount} \nСписок: {d.AssignedSoldiers?.MembersList} \nЗона: {d.LocationInfo?.Zone} \nКоординаты: {d.LocationInfo?.Coordinates} \nКПП: {d.LocationInfo?.Checkpoint} \nМаршрут: {d.LocationInfo?.Route}";
+                string additional = $"ID командира: {d.AssignedSoldiers?.LeaderId} \nКол-во бойцов: {d.AssignedSoldiers?.MembersCount} \nСписок: {d.AssignedSoldiers?.MembersList} " +
+                    $"\nЗона: {d.LocationInfo?.Zone} \nКоординаты: {d.LocationInfo?.Coordinates} \nКПП: {d.LocationInfo?.Checkpoint} \nМаршрут: {d.LocationInfo?.Route}";
                 allItems.Rows.Add("Наряд", d.Id, d.TaskName, main, additional);
             }
             Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -157,7 +158,7 @@ namespace Army
             var dt = new System.Data.DataTable();
             dt.Columns.Add("Свойство");
             dt.Columns.Add("Значение");
-            dt.Rows.Add("ID", s.Id);
+            dt.Rows.Add("Номер", s.Id);
             dt.Rows.Add("ФИО", s.FullName);
             dt.Rows.Add("Звание", s.Rank);
             dt.Rows.Add("Дата рождения", s.PersonalInfo?.BirthDate.ToString("dd.MM.yyyy"));
@@ -175,7 +176,7 @@ namespace Army
             var dt = new System.Data.DataTable();
             dt.Columns.Add("Свойство");
             dt.Columns.Add("Значение");
-            dt.Rows.Add("ID", eq.Id);
+            dt.Rows.Add("Номер", eq.Id);
             dt.Rows.Add("Наименование", eq.Name);
             dt.Rows.Add("Тип", eq.TypeTechnics);
             dt.Rows.Add("Год выпуска", eq.YearRelease);
@@ -195,7 +196,7 @@ namespace Army
             var dt = new System.Data.DataTable();
             dt.Columns.Add("Свойство");
             dt.Columns.Add("Значение");
-            dt.Rows.Add("ID", d.Id);
+            dt.Rows.Add("Номер", d.Id);
             dt.Rows.Add("Задача", d.TaskName);
             dt.Rows.Add("Приоритет", d.Priority);
             dt.Rows.Add("Длительность (ч)", d.Duration);

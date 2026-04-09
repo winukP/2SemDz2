@@ -70,6 +70,24 @@
     },
     {
       "Id": 102,
+      "Name": "Т-72Б3",
+      "TypeTechnics": "Танк",
+      "YearRelease": 2011,
+      "TechnicalSpecs": {
+        "Weight": "46,5 тонн",
+        "EnginePower": "840 л.с.",
+        "MaxSpeed": "65 км/ч",
+        "FuelCapacity": "1100 л"
+      },
+      "CombatInfo": {
+        "Crew": "3 человека",
+        "Armament": "125-мм гладкоствольная пушка",
+        "Ammunition": "35 снарядов",
+        "Armor": "Динамическая защита"
+      }
+    },
+    {
+      "Id": 103,
       "Name": "БМП-3",
       "TypeTechnics": "Боевая машина пехоты",
       "YearRelease": 2018,
@@ -82,8 +100,8 @@
       "CombatInfo": {
         "Crew": "3 человека",
         "Armament": "100-мм пушка, 30-мм автоматическая пушка",
-        "Ammunition": "40 выстрелов, 500 снарядов",
-        "Armor": "Противопульная"
+        "Ammunition": "500 снарядов",
+        "Armor": "Противопульная защита"
       }
     }
   ],

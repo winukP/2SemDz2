@@ -71,8 +71,26 @@
         <Armor>Комбинированная, динамическая защита</Armor>
       </CombatInfo>
     </MilitaryTechnics>
+	<MilitaryTechnics>
+	  <Id>102</Id>
+	  <Name>Т-72Б3</Name>
+	  <TypeTechnics>Танк</TypeTechnics>
+	  <YearRelease>2011</YearRelease>
+	  <TechnicalSpecs>
+		<Weight>46,5 тонн</Weight>
+		<EnginePower>840 л.с.</EnginePower>
+		<MaxSpeed>65 км/ч</MaxSpeed>
+		<FuelCapacity>1100 л</FuelCapacity>
+	  </TechnicalSpecs>
+	  <CombatInfo>
+		<Crew>3 человека</Crew>
+		<Armament>125-мм гладкоствольная пушка</Armament>
+		<Ammunition>35 снарядов</Ammunition>
+		<Armor>Динамическая защита</Armor>
+	  </CombatInfo>
+	</MilitaryTechnics>
     <MilitaryTechnics>
-      <Id>102</Id>
+      <Id>103</Id>
       <Name>БМП-3</Name>
       <TypeTechnics>Боевая машина пехоты</TypeTechnics>
       <YearRelease>2018</YearRelease>
@@ -85,8 +103,8 @@
       <CombatInfo>
         <Crew>3 человека</Crew>
         <Armament>100-мм пушка, 30-мм автоматическая пушка</Armament>
-        <Ammunition>40 выстрелов, 500 снарядов</Ammunition>
-        <Armor>Противопульная</Armor>
+        <Ammunition>500 снарядов</Ammunition>
+        <Armor>Противопульная защита</Armor>
       </CombatInfo>
     </MilitaryTechnics>
   </Technics>
