@@ -151,6 +151,7 @@ namespace Army
                 allItems.Rows.Add("Наряд", d.Id, d.TaskName, main, additional);
             }
             Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Table.DataSource = allItems;
         }
         private void ShowSoldierDetails(Soldier s)
@@ -169,7 +170,8 @@ namespace Army
             dt.Rows.Add("Должность", s.ServiceInfo?.Position);
             dt.Rows.Add("Тип службы", s.ServiceInfo?.ContractType);
             Table.DataSource = dt;
-            Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void ShowTechnicsDetails(MilitaryTechnics eq)
         {
@@ -189,7 +191,8 @@ namespace Army
             dt.Rows.Add("Боекомплект", eq.CombatInfo?.Ammunition);
             dt.Rows.Add("Броня", eq.CombatInfo?.Armor);
             Table.DataSource = dt;
-            Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void ShowDutyDetails(Duty d)
         {
@@ -209,7 +212,8 @@ namespace Army
             dt.Rows.Add("КПП", d.LocationInfo?.Checkpoint);
             dt.Rows.Add("Маршрут", d.LocationInfo?.Route);
             Table.DataSource = dt;
-            Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+            Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
         private void Tree_AfterSelect(object sender, TreeViewEventArgs e)
         {
@@ -234,6 +238,7 @@ namespace Army
                         s.ServiceInfo?.Unit, s.ServiceInfo?.Position, s.ServiceInfo?.ContractType);
                 }
                 Table.DataSource = dt;
+                Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
             }
             if (e.Node.Text == "Военная техника")
@@ -251,13 +256,16 @@ namespace Army
                 dt.Columns.Add("Вооружение");
                 dt.Columns.Add("Боекомплект");
                 dt.Columns.Add("Броня");
-                foreach (var eq in currentData.Technics) dt.Rows.Add(eq.Id, eq.Name, eq.TypeTechnics, eq.YearRelease, 
-                    eq.TechnicalSpecs?.Weight, eq.TechnicalSpecs?.EnginePower, eq.TechnicalSpecs?.MaxSpeed, 
-                    eq.TechnicalSpecs?.FuelCapacity, eq.CombatInfo?.Crew, eq.CombatInfo?.Armament, eq.CombatInfo?.Ammunition, 
-                    eq.CombatInfo?.Armor);
+                foreach (var t in currentData.Technics)
+                {
+                    dt.Rows.Add(t.Id, t.Name, t.TypeTechnics, t.YearRelease,
+                    t.TechnicalSpecs?.Weight, t.TechnicalSpecs?.EnginePower, t.TechnicalSpecs?.MaxSpeed,
+                    t.TechnicalSpecs?.FuelCapacity, t.CombatInfo?.Crew, t.CombatInfo?.Armament, t.CombatInfo?.Ammunition,
+                    t.CombatInfo?.Armor);
+                } 
                 Table.DataSource = dt;
+                Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                return;
             }
             if (e.Node.Text == "Наряды")
             {
@@ -274,13 +282,16 @@ namespace Army
                 dt.Columns.Add("Координаты");
                 dt.Columns.Add("КПП");
                 dt.Columns.Add("Маршрут");
-                foreach (var d in currentData.Duties) dt.Rows.Add(d.Id, d.TaskName, d.Priority, d.Duration, 
-                    d.AssignedSoldiers?.LeaderId, d.AssignedSoldiers?.LeaderName, d.AssignedSoldiers?.MembersCount, 
-                    d.AssignedSoldiers?.MembersList, d.LocationInfo?.Zone, d.LocationInfo?.Coordinates, 
+                foreach (var d in currentData.Duties)
+                {
+                    dt.Rows.Add(d.Id, d.TaskName, d.Priority, d.Duration,
+                    d.AssignedSoldiers?.LeaderId, d.AssignedSoldiers?.LeaderName, d.AssignedSoldiers?.MembersCount,
+                    d.AssignedSoldiers?.MembersList, d.LocationInfo?.Zone, d.LocationInfo?.Coordinates,
                     d.LocationInfo?.Checkpoint, d.LocationInfo?.Route);
+                }
                 Table.DataSource = dt;
+                Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
                 Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
-                return;
             }
             if (e.Node.Tag != null)
             {

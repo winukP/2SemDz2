@@ -123,6 +123,8 @@
             // Table
             // 
             Table.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            Table.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Table.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             Table.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             Table.Location = new Point(0, 51);
             Table.Name = "Table";
